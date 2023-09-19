@@ -231,22 +231,172 @@ svg {
 }
 
 /* Add blur to header */
+.blur-header {
+  background-color: transparent;
+}
 
+.blur-header::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 10%, 0.3);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 /* Active link */
 
 
 /*=============== HOME ===============*/
+.home {
+  background-color: var(--container-color);
+}
 
+.home-container {
+  padding-top: 2rem;
+  row-gap: 2.5rem;
+}
+
+.home-content {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.home-data {
+  text-align: center;
+}
+
+.home-subtitle,
+.home-education {
+  font-size: var(--bigger-font-size);
+}
+
+.home-subtitle span,
+.home-title {
+  color: var(--first-color);
+}
+
+.home-title {
+  font-size: var(--bigger-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.home-description {
+  margin-block: 1rem 1.5rem;
+}
+
+.home-social {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.25rem;
+}
+
+.home-social-link {
+  display: flex;
+  background-color: var(--first-color-alt);
+  padding: .5rem;
+  color: var(--title-color);
+  font-size: 1.5rem;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: transform .4s;
+}
+
+.home-social-link:hover {
+  transform: translateY(-.25rem);
+}
+
+.home-image {
+  justify-self: center;
+}
+
+.home-blob {
+  width: 320px;
+  fill: var(--first-color);
+  filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, .2));
+}
 
 /*=============== BUTTON ===============*/
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  padding: 1rem 1.75rem;
+  border-radius: .5rem;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: box-shadow .4s;
+}
 
+.button:hover {
+  box-shadow: 0 8px 24px hsla(var(--hue), 100%, 40%, .25);
+}
 
 /*=============== ABOUT ===============*/
+.about-container {
+  row-gap: 2.5rem;
+}
 
+.about-data {
+  text-align: center;
+}
+
+.about-description {
+  margin-bottom: 2rem;
+}
+
+.about-image {
+  justify-self: center;
+}
+
+.about-blob {
+  width: 320px;
+}
+
+.about-blob path {
+  stroke: var(--first-color);
+}
 
 /*=============== SKILLS ===============*/
+.skills {
+  background-color: var(--container-color);
+}
 
+.skills-data {
+  text-align: center;
+}
+
+.skills-description {
+  margin-bottom: 2rem;
+}
+
+.skills-content,
+.skills-group {
+  display: grid;
+}
+
+.skills-content {
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 4rem;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.skills-group {
+  row-gap: 1rem;
+  list-style: decimal-leading-zero;
+}
+
+.skills-item {
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+}
+
+.skills-item::marker {
+  color: var(--first-color);
+}
 
 /*=============== SERVICES ===============*/
 
